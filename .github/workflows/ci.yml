@@ -11,9 +11,10 @@ jobs:
   Test:
     strategy:
       matrix:
-        configuration: [windows-latest]
+        os: [windows-latest]
+        dotnet: ['6.0.19', '7.0.8', '8.0.0'] 
 
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
 
     env:
       Solution_Name: QuanLyQuanCafe.sln
